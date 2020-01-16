@@ -75,7 +75,7 @@ func ExampleSearchByRegions()  {
 }
 
 func ExampleSearchByRegion()  {
-result := searchByRegion(houses, "Cино")
+result := searchByRegion(houses, "Сино")
 fmt.Println(result)
 //Output: [{2 3 комнатная квартира 140000 Сино 8}]
 }
