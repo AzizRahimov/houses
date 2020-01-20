@@ -34,25 +34,25 @@ var houses = [] house{
 	
 }
 
-func ExampleSortByExpensiveHouse()  {
-	result :=sortByExpensiveHouse(houses)
+func ExampleSortByPriceDesc()  {
+	result :=sortByPriceDesc(houses)
 	fmt.Println(result)
 	// Output: [{3 5 комнатная квартира 500000 Шохмансур 14} {4 2 комнатная квартира 200000 Шохмансур 15} {2 3 комнатная квартира 140000 Сино 8} {1 2 комнатная квартира 100000 Фирдавси 10}]
 
 }
-func ExampleSortByCheapHouse()  {
-	result := sortByCheapHouse(houses)
+func ExampleSortByPriceAsc()  {
+	result := sortByPriceAsc(houses)
 	fmt.Println(result)
 	// Output: [{1 2 комнатная квартира 100000 Фирдавси 10} {2 3 комнатная квартира 140000 Сино 8} {4 2 комнатная квартира 200000 Шохмансур 15} {3 5 комнатная квартира 500000 Шохмансур 14}]
 }
-func ExampleSortByLongDistanceFromCentre()  {
-	result := sortByLongDistanceFromCentre(houses)
+func ExampleSortByDistanceFromCentreDesc()  {
+	result := sortByDistanceFromCentreDesc(houses)
 	fmt.Println(result)
 	//Output:[{4 2 комнатная квартира 200000 Шохмансур 15} {3 5 комнатная квартира 500000 Шохмансур 14} {1 2 комнатная квартира 100000 Фирдавси 10} {2 3 комнатная квартира 140000 Сино 8}]
 
 }
-func ExampleSortByNearDistanceFromCentre()  {
-	result := sortByNearDistanceFromCentre(houses)
+func ExampleSortByDistanceFromCentreAsc()  {
+	result := sortByDistanceFromCentreAsc(houses)
 	fmt.Println(result)
 	//Output: [{2 3 комнатная квартира 140000 Сино 8} {1 2 комнатная квартира 100000 Фирдавси 10} {3 5 комнатная квартира 500000 Шохмансур 14} {4 2 комнатная квартира 200000 Шохмансур 15}]
 }

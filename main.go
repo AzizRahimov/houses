@@ -12,7 +12,7 @@ type house struct {
 	distanceFromCentre int64
 }
 
-func sortByExpensiveHouse(houses []house) []house {
+func sortByPriceDesc(houses []house) []house {
 	result := make([]house, len(houses))
 	copy(result, houses)
 	sort.Slice(result, func(i, j int) bool {
@@ -21,7 +21,7 @@ func sortByExpensiveHouse(houses []house) []house {
 	})
 	return result
 }
-func sortByCheapHouse(houses []house) []house {
+func sortByPriceAsc(houses []house) []house {
 	result := make([]house, len(houses))
 	copy(result, houses)
 	sort.Slice(result, func(i, j int) bool {
@@ -31,7 +31,7 @@ func sortByCheapHouse(houses []house) []house {
 	return result
 
 }
-func sortByLongDistanceFromCentre(houses []house) []house {
+func sortByDistanceFromCentreDesc(houses []house) []house {
 	result := make([]house, len(houses))
 	copy(result, houses)
 	sort.Slice(result, func(i, j int) bool {
@@ -42,7 +42,7 @@ func sortByLongDistanceFromCentre(houses []house) []house {
 
 }
 
-func sortByNearDistanceFromCentre(houses []house) []house {
+func sortByDistanceFromCentreAsc(houses []house) []house {
 	result := make([]house, len(houses))
 	copy(result, houses)
 	sort.Slice(result, func(i, j int) bool {
@@ -94,5 +94,5 @@ func searchByRegions(houses []house, regions []string) []house {
 
 func main() {
 
-	}
+}
 
