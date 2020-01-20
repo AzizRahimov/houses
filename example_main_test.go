@@ -34,6 +34,8 @@ var houses = [] house{
 	
 }
 
+var housesEmpty = []house{}
+
 func ExampleSortByPriceDesc()  {
 	result :=sortByPriceDesc(houses)
 	fmt.Println(result)
@@ -57,26 +59,50 @@ func ExampleSortByDistanceFromCentreAsc()  {
 	//Output: [{2 3 комнатная квартира 140000 Сино 8} {1 2 комнатная квартира 100000 Фирдавси 10} {3 5 комнатная квартира 500000 Шохмансур 14} {4 2 комнатная квартира 200000 Шохмансур 15}]
 }
 
-func ExampleSearchByMaxPrice()  {
+func ExampleSearchByMaxPrice_ManyResults()  {
 	result := searchByMaxPrice(houses,200_000)
 	fmt.Println(result)
 	// Output: [{1 2 комнатная квартира 100000 Фирдавси 10} {2 3 комнатная квартира 140000 Сино 8} {4 2 комнатная квартира 200000 Шохмансур 15}]
 }
-func ExampleSearchByPriceLimit()  {
+func ExampleSearchByMaxPrice_NoResult()  {
+	result := searchByMaxPrice(housesEmpty,100000000)
+	fmt.Println(result)
+	// Output: []
+}
+func ExampleSearchByPriceLimit_ManyResults()  {
 	result := searchByPriceLimit (houses, 100_000, 300_000 )
 	fmt.Println(result)
 	//Output: [{1 2 комнатная квартира 100000 Фирдавси 10} {2 3 комнатная квартира 140000 Сино 8} {4 2 комнатная квартира 200000 Шохмансур 15}]
 }
 
-func ExampleSearchByRegions()  {
+func ExampleSearchByPriceLimit_NoResults()  {
+	result := searchByPriceLimit (housesEmpty, 1000_000, 3000_000 )
+	fmt.Println(result)
+	//Output: []
+}
+
+
+func ExampleSearchByRegionsManyResults()  {
 	result := searchByRegions (houses, []string{"Фирдавси", "Сино"})
 	fmt.Println(result)
 	//Output: [{1 2 комнатная квартира 100000 Фирдавси 10} {2 3 комнатная квартира 140000 Сино 8}]
 }
 
-func ExampleSearchByRegion()  {
+func ExampleSearchByRegions_NoResults()  {
+	result := searchByRegions (housesEmpty, []string{"Фирдавси", "Сино"})
+	fmt.Println(result)
+	//Output: []
+}
+
+func ExampleSearchByRegion_ManyResults()  {
 result := searchByRegion(houses, "Сино")
 fmt.Println(result)
 //Output: [{2 3 комнатная квартира 140000 Сино 8}]
 }
+func ExampleSearchByRegion_NoResults()  {
+	result := searchByRegion(housesEmpty, "Сино")
+	fmt.Println(result)
+	//Output: []
+}
+
 
